@@ -42,7 +42,7 @@ const projects = [
             { name: "Tailwind CSS", icon: BiLogoTailwindCss },
             { name: "Node.js", icon: IoLogoNodejs },
             { name: "MongoDB", icon: BiLogoMongodb },
-            { name: "Gemini AI", icon: RiGeminiFill },
+            { name: "Gemini", icon: RiGeminiFill },
         ],
         github: "https://github.com/awanabdulwahab05/skillmatch-ai-frontend",
         live: "",

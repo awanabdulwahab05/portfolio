@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
-import { FaSquareGithub, FaLinkedin as FaLinkedin6 } from "react-icons/fa6";
+import { FaSquareGithub, FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -130,20 +130,20 @@ const Contact = () => {
                                 </div>
                             </a>
 
-                            <a
-                                href=""
+                            {/* <a
+                                href="https://www.linkedin.com/in/your-name/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-4 rounded-xl transition hover:bg-white/10"
                             >
                                 <div className="rounded-xl bg-[#064B4A] p-3">
-                                    <FaLinkedin6 size={22} />
+                                    <FaLinkedin size={22} />
                                 </div>
 
                                 <div>
                                     <p className="font-medium">Linkedin</p>
                                 </div>
-                            </a>
+                            </a> */}
                         </div>
 
                         <div className="my-8 h-px bg-white/20" />
@@ -160,12 +160,21 @@ const Contact = () => {
                             </a>
 
                             <a
-                                href="#contact"
+                                href="https://wa.me/923328924421"
                                 aria-label="Contact me"
                                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 transition duration-300 hover:-translate-y-1 hover:bg-[#064B4A]"
                             >
-                                <FaCommentDots size={21} />
+                                <FaWhatsapp size={21} />
                             </a>
+
+                            <a
+                                href="https://www.instagram.com/awan.abd.al.wahab/"
+                                aria-label="Contact me"
+                                className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 transition duration-300 hover:-translate-y-1 hover:bg-[#064B4A]"
+                            >
+                                <FaInstagram size={21} />
+                            </a>
+
                         </div>
                     </motion.div>
 

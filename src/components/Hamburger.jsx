@@ -33,6 +33,7 @@ const Hamburger = () => {
 
                 {links.map((link) => (
                     <a
+                        onClick={() => setIsopen(false)}
                         key={link.name}
                         href={link.href}
 

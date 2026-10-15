@@ -65,7 +65,7 @@ const Navbar = () => {
           text-white whitespace-nowrap"
                 >
                     <span className="text-white">&lt;/&gt;</span>{" "}
-                    Portfolio
+                    Abd al Wahab
                 </motion.a>
 
                 {/* Navigation Links */}

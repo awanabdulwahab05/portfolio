@@ -1,21 +1,49 @@
-import React, { useState } from "react";
+
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import {
-    Mail,
-    MapPin,
-    Send,
-    ArrowUpRight,
-    MessageCircle,
-} from "lucide-react";
-import { IoIosMail } from "react-icons/io"
-import { FaSquareGithub, FaLinkedin } from "react-icons/fa6"
+    FaEnvelope,
+    FaPaperPlane,
+    FaCommentDots,
+} from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import { IoIosMail } from "react-icons/io";
+import { FaSquareGithub, FaLinkedin as FaLinkedin6 } from "react-icons/fa6";
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
+    const [isSending, setIsSending] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const form = useRef(null);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+
+        if (!form.current || isSending) return;
+
+        setIsSending(true);
+        setErrorMessage("");
+
+        try {
+            await emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current,
+                {
+                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+                }
+            );
+
+            setSubmitted(true);
+            form.current.reset();
+        } catch (error) {
+            console.error("EmailJS error:", error);
+            setErrorMessage(
+                "Failed to send your message. Please try again."
+            );
+        } finally {
+            setIsSending(false);
+        }
     };
 
     return (
@@ -97,23 +125,22 @@ const Contact = () => {
                                 </div>
 
                                 <div>
-                                    <p className="text-sm text-white/70">GitHub Repository</p>
-                                    <p className="font-medium">View my GitHub</p>
+                                    {/* <p className="text-sm text-white/70">GitHub Repository</p> */}
+                                    <p className="font-medium">GitHub</p>
                                 </div>
                             </a>
 
                             <a
-                                href="https://github.com/awanabdulwahab05"
+                                href=""
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-4 rounded-xl transition hover:bg-white/10"
                             >
                                 <div className="rounded-xl bg-[#064B4A] p-3">
-                                    <FaLinkedin size={22} />
+                                    <FaLinkedin6 size={22} />
                                 </div>
 
                                 <div>
-                                    {/* <p className="text-sm text-white/70">Linkedin</p> */}
                                     <p className="font-medium">Linkedin</p>
                                 </div>
                             </a>
@@ -125,11 +152,11 @@ const Contact = () => {
 
                         <div className="flex gap-4">
                             <a
-                                href="mailto:your.email@example.com"
+                                href="mailto:awanabdulwahab05@gmail.com"
                                 aria-label="Send me an email"
                                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 transition duration-300 hover:-translate-y-1 hover:bg-[#064B4A]"
                             >
-                                <Mail size={21} />
+                                <FaEnvelope size={21} />
                             </a>
 
                             <a
@@ -137,7 +164,7 @@ const Contact = () => {
                                 aria-label="Contact me"
                                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 transition duration-300 hover:-translate-y-1 hover:bg-[#064B4A]"
                             >
-                                <MessageCircle size={21} />
+                                <FaCommentDots size={21} />
                             </a>
                         </div>
                     </motion.div>
@@ -164,12 +191,15 @@ const Contact = () => {
                                     Thank you!
                                 </h4>
                                 <p className="mt-2 text-white/80">
-                                    Your form was submitted in the frontend demo.
-                                    No email has been sent yet.
+                                    Your message has been sent successfully.
+                                    I'll get back to you soon.
                                 </p>
 
                                 <button
-                                    onClick={() => setSubmitted(false)}
+                                    onClick={() => {
+                                        setSubmitted(false);
+                                        setErrorMessage("");
+                                    }}
                                     className="mt-5 font-semibold underline underline-offset-4 hover:text-[#064B4A]"
                                 >
                                     Send another message
@@ -177,6 +207,7 @@ const Contact = () => {
                             </div>
                         ) : (
                             <form
+                                ref={form}
                                 onSubmit={handleSubmit}
                                 className="mt-8 space-y-5"
                             >
@@ -189,7 +220,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         id="name"
-                                        name="name"
+                                        name="from_name"
                                         type="text"
                                         placeholder="Enter your name"
                                         required
@@ -206,7 +237,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         id="email"
-                                        name="email"
+                                        name="from_email"
                                         type="email"
                                         placeholder="Enter your email"
                                         required
@@ -248,19 +279,23 @@ const Contact = () => {
                                     />
                                 </div>
 
+                                {errorMessage && (
+                                    <p role="alert" className="text-sm font-medium text-red-100">
+                                        {errorMessage}
+                                    </p>
+                                )}
+
                                 <button
                                     type="submit"
-                                    className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#064B4A] px-6 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#166b72] hover:shadow-lg"
+                                    disabled={isSending}
+                                    className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#064B4A] px-6 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#166b72] hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
                                 >
-                                    Send Message
-                                    <Send
+                                    {isSending ? "Sending..." : "Send Message"}
+                                    <FaPaperPlane
                                         size={18}
                                         className="transition-transform duration-300 group-hover:translate-x-1"
                                     />
-                                    <ArrowUpRight
-                                        size={17}
-                                        className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                                    />
+
                                 </button>
                             </form>
                         )}

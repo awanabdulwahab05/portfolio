@@ -6,13 +6,17 @@ const HeroSection = () => {
 
             {/* Background Image */}
             {/* For Mobile */}
-            <img src="/Mobile-bg.png"
+            <img src="/Mobile-bg.jpg"
                 alt="img"
+                fetchPriority="high"
+                loading="eager"
                 className="lg:hidden inset-0 w-full h-full object-cover object-center"
             />
             <img
                 src="/Hero-bg.jpg"
-                alt="Hero background"
+                alt="Portfolio hero"
+                fetchPriority="high"
+                loading="eager"
                 className="lg:absolute inset-0 w-full h-full object-cover object-center"
             />
 

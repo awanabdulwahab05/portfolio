@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import {
@@ -8,7 +7,12 @@ import {
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
-import { FaSquareGithub, FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import {
+    FaSquareGithub,
+    FaWhatsapp,
+    FaInstagram,
+    FaLinkedin,
+} from "react-icons/fa6";
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -49,7 +53,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="relative overflow-hidden bg-[#5ab4bf] px-6 py-24 text-[#F3FAF8] md:px-12 lg:px-20"
+            className="relative overflow-hidden bg-[#5ab4bf] px-4 py-24 text-[#F3FAF8] sm:px-6 md:px-12 lg:px-20"
         >
             {/* Background decoration */}
             <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#8DE5DE]/20 blur-3xl" />
@@ -60,7 +64,7 @@ const Contact = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.3 }}
+                    viewport={{ amount: 0.2 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="mb-14 text-center"
                 >
@@ -83,9 +87,9 @@ const Contact = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ amount: 0.3 }}
+                        viewport={{ amount: 0.2 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-xl md:p-10"
+                        className="min-w-0 rounded-3xl border border-white/20 bg-white/10 p-5 shadow-xl backdrop-blur-xl sm:p-8 md:p-10"
                     >
                         <h3 className="text-2xl font-bold">
                             Let's Talk
@@ -103,11 +107,13 @@ const Contact = () => {
                                     <IoIosMail size={22} />
                                 </div>
 
-                                <div>
-                                    <p className="text-sm text-white/70">Email</p>
+                                <div className="min-w-0">
+                                    <p className="text-sm text-white/70">
+                                        Email
+                                    </p>
                                     <a
                                         href="mailto:awanabdulwahab05@gmail.com"
-                                        className="font-medium transition hover:text-[#064B4A]"
+                                        className="break-all font-medium transition hover:text-[#064B4A]"
                                     >
                                         awanabdulwahab05@gmail.com
                                     </a>
@@ -148,7 +154,9 @@ const Contact = () => {
 
                         <div className="my-8 h-px bg-white/20" />
 
-                        <p className="mb-4 font-semibold">Connect with me</p>
+                        <p className="mb-4 font-semibold">
+                            Connect with me
+                        </p>
 
                         <div className="flex gap-4">
                             <a
@@ -174,7 +182,6 @@ const Contact = () => {
                             >
                                 <FaInstagram size={21} />
                             </a>
-
                         </div>
                     </motion.div>
 
@@ -182,9 +189,9 @@ const Contact = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ amount: 0.3 }}
+                        viewport={{ amount: 0.2 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-xl backdrop-blur-xl md:p-10"
+                        className="min-w-0 rounded-3xl border border-white/20 bg-white/10 p-5 shadow-xl backdrop-blur-xl sm:p-8 md:p-10"
                     >
                         <h3 className="text-2xl font-bold">
                             Send a Message
@@ -289,7 +296,10 @@ const Contact = () => {
                                 </div>
 
                                 {errorMessage && (
-                                    <p role="alert" className="text-sm font-medium text-red-100">
+                                    <p
+                                        role="alert"
+                                        className="text-sm font-medium text-red-100"
+                                    >
                                         {errorMessage}
                                     </p>
                                 )}
@@ -304,7 +314,6 @@ const Contact = () => {
                                         size={18}
                                         className="transition-transform duration-300 group-hover:translate-x-1"
                                     />
-
                                 </button>
                             </form>
                         )}

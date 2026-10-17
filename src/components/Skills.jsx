@@ -90,7 +90,7 @@ const Skills = () => {
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.5 }}
+                    viewport={{ amount: 0.3 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="grid gap-7 sm:grid-cols-2">
                     {skillCategories.map((category) => {

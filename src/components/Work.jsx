@@ -17,21 +17,7 @@ import { GrJs } from "react-icons/gr"
 import { RiGeminiFill } from "react-icons/ri"
 
 const projects = [
-    {
-        title: "Field Flow",
-        description:
-            "A field technician management system where customers submit service requests, admins assign technicians, and technicians update service reports.",
-        image: "/field-flow.jpg",
-        technologies: [
-            { name: "React", icon: IoLogoReact },
-            { name: "Tailwind CSS", icon: BiLogoTailwindCss },
-            { name: "Node.js", icon: IoLogoNodejs },
-            { name: "Express", icon: GrJs },
-            { name: "MongoDB", icon: BiLogoMongodb },
-        ],
-        github: "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
-        live: "",
-    },
+
     {
         title: "SkillMatch AI",
         description:
@@ -45,7 +31,22 @@ const projects = [
             { name: "Gemini", icon: RiGeminiFill },
         ],
         github: "https://github.com/awanabdulwahab05/skillmatch-ai-frontend",
-        live: "",
+        live: "https://skillmatch-ai-frontend-six.vercel.app/",
+    },
+    {
+        title: "Field Flow",
+        description:
+            "A field technician management system where customers submit service requests, admins assign technicians, and technicians update service reports.",
+        image: "/field-flow.jpg",
+        technologies: [
+            { name: "React", icon: IoLogoReact },
+            { name: "Tailwind CSS", icon: BiLogoTailwindCss },
+            { name: "Node.js", icon: IoLogoNodejs },
+            { name: "Express", icon: GrJs },
+            { name: "MongoDB", icon: BiLogoMongodb },
+        ],
+        github: "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
+        live: "https://field-flow-self.vercel.app/",
     },
 ];
 
@@ -76,7 +77,7 @@ const Work = () => {
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.5 }}
+                    viewport={{ amount: 0.1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="grid gap-7 sm:grid-cols-2 lg:grid-cols-2"
                 >

@@ -44,42 +44,7 @@ const Services = () => {
                 "Authentication Systems",
             ],
         },
-        // {
-        //     number: "04",
-        //     title: "Responsive Web Design",
-        //     icon: Smartphone,
-        //     description:
-        //         "I make websites adapt to different screen sizes while maintaining usability, consistency, and visual appeal.",
-        //     features: [
-        //         "Mobile-Friendly Layouts",
-        //         "Cross-Device Compatibility",
-        //         "Clean UI Components",
-        //     ],
-        // },
-        // {
-        //     number: "05",
-        //     title: "Website Optimization",
-        //     icon: Rocket,
-        //     description:
-        //         "I focus on improving website performance, maintainability, and the overall experience for users.",
-        //     features: [
-        //         "Reusable Components",
-        //         "Code Organization",
-        //         "Performance Improvements",
-        //     ],
-        // },
-        // {
-        //     number: "06",
-        //     title: "Website Maintenance",
-        //     icon: Code2,
-        //     description:
-        //         "I help improve existing websites by fixing issues, updating components, and adding useful functionality.",
-        //     features: [
-        //         "Bug Fixes",
-        //         "Feature Updates",
-        //         "UI Improvements",
-        //     ],
-        // },
+
     ];
 
     return (
@@ -110,7 +75,7 @@ const Services = () => {
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.4 }}
+                    viewport={{ amount: 0.1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
                     {services.map((service) => {

@@ -102,7 +102,7 @@ const About = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ amount: 0.5 }}
+                        viewport={{ amount: 0.25 }}
                         transition={{ duration: 1.5 }}
                     >
                         <h3 className="mb-5 text-2xl font-bold leading-snug md:text-3xl">

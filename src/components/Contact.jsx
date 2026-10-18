@@ -320,12 +320,6 @@ const Contact = () => {
                     </motion.div>
                 </div>
 
-                {/* Footer */}
-                <div className="mt-16 border-t border-white/20 pt-8 text-center text-sm text-white/75">
-                    <p>
-                        © {new Date().getFullYear()} Your Portfolio. All rights reserved.
-                    </p>
-                </div>
             </div>
         </section>
     );

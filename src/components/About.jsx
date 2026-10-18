@@ -114,10 +114,9 @@ const About = () => {
                         </h3>
 
                         <p className="mb-8 leading-8 text-desc">
-                            I'm continuously learning, exploring new technologies, and
-                            improving my skills through hands-on projects. My goal is to
-                            create clean, maintainable, and useful solutions to real-world
-                            problems.
+                            I build responsive, user-friendly websites and web applications
+                            with modern frontend interfaces and backend
+                            functionality.
                         </p>
 
                         {/* Technologies */}

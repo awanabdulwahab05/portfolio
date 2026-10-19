@@ -1,8 +1,6 @@
-
 import { motion } from "motion/react";
 import {
     IoLogoReact,
-    IoLayers,
     IoLogoNodejs,
 } from "react-icons/io5";
 import {
@@ -10,7 +8,6 @@ import {
     BiLogoMongodb,
 } from "react-icons/bi";
 import {
-    FaServer,
     FaGithub,
     FaExternalLinkAlt,
 } from "react-icons/fa";
@@ -48,6 +45,29 @@ const projects = [
         github: "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
         live: "https://field-flow-self.vercel.app/",
     },
+];
+
+// Small projects
+const smallProjects = [
+    {
+        title: "Tic Tac Toe",
+        description: "A simple tic-tac-toe game.",
+        technologies: [
+
+        ],
+        github: "https://github.com/awanabdulwahab05/TicTacToe",
+        live: "https://tic-tac-toe-neon-three-10.vercel.app/",
+    },
+    {
+        title: "Game",
+        description: "A simple stone paper sicssosr game made with HTML, CSS and JavaScript.",
+        technologies: [
+
+        ],
+        github: "https://github.com/awanabdulwahab05/Stone-Paper-Scissor",
+        live: "https://stone-paper-scissor-mauve-eta.vercel.app/",
+    },
+
 ];
 
 const Work = () => {
@@ -157,6 +177,93 @@ const Work = () => {
                             </div>
                         </article>
                     ))}
+                </motion.div>
+
+                {/* Some Small Projects: all in one card */}
+                <motion.div
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ amount: 0.1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="mt-20"
+                >
+                    <div className="mb-8">
+                        <h3 className="text-2xl font-bold text-white md:text-3xl">
+                            Some small projects
+                        </h3>
+
+                        <p className="mt-3 max-w-2xl leading-7 text-[#B8C3CC]">
+                            Smaller builds from learning and experimenting.
+                        </p>
+                    </div>
+
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-lg shadow-black/20">
+                        <ul className="divide-y divide-white/10">
+                            {smallProjects.map((project) => (
+                                <li
+                                    key={project.title}
+                                    className="flex flex-col gap-4 p-6 transition duration-300 hover:bg-[#1C1C1C] md:flex-row md:items-center md:justify-between"
+                                >
+                                    {/* Info */}
+                                    <div className="min-w-0 md:max-w-xl">
+                                        <h4 className="text-lg font-bold text-white">
+                                            {project.title}
+                                        </h4>
+
+                                        <p className="mt-1 text-sm leading-7 text-[#B8C3CC]">
+                                            {project.description}
+                                        </p>
+
+                                        <div className="mt-3 flex flex-wrap gap-2">
+                                            {project.technologies.map((technology) => {
+                                                const TechnologyIcon = technology.icon;
+
+                                                return (
+                                                    <span
+                                                        key={technology.name}
+                                                        className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#1C1C1C] px-3 py-1.5 text-xs text-[#D7E2EA]"
+                                                    >
+                                                        <TechnologyIcon
+                                                            size={14}
+                                                            className="text-[#9BA9B5]"
+                                                        />
+                                                        <span>{technology.name}</span>
+                                                    </span>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* Links */}
+                                    <div className="flex shrink-0 items-center gap-3">
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`View ${project.title} source code on GitHub`}
+                                            className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-[#1C1C1C] px-4 py-2 text-sm font-semibold text-[#D7E2EA] transition hover:border-white/30 hover:bg-[#292E33]"
+                                        >
+                                            <FaGithub size={18} />
+                                            <span>GitHub</span>
+                                        </a>
+
+                                        {project.live && (
+                                            <a
+                                                href={project.live}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`View ${project.title} live demo`}
+                                                className="inline-flex items-center gap-2 rounded-lg bg-[#D7E2EA] px-4 py-2 text-sm font-semibold text-[#0C0C0C] transition hover:bg-white"
+                                            >
+                                                <FaExternalLinkAlt size={12} />
+                                                <span>Live Demo</span>
+                                            </a>
+                                        )}
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </motion.div>
             </div>
         </section>

@@ -2,7 +2,6 @@
 import {
     IoLogoHtml5,
     IoLogoCss3,
-    IoCodeSlashOutline,
     IoLogoReact,
     IoLogoJavascript,
     IoLogoNodejs,
@@ -13,16 +12,11 @@ import { BiLogoTailwindCss, BiLogoMongodb } from "react-icons/bi";
 import { CiMobile3 } from "react-icons/ci";
 import { LuMonitor } from "react-icons/lu";
 import {
-    FaDatabase,
     FaCheckCircle,
-    FaWrench,
-    FaNpm,
-    FaGitAlt,
     FaGithub
 } from "react-icons/fa";
 import { FaServer } from "react-icons/fa6";
 import { GrJs } from "react-icons/gr";
-import { VscVscode } from "react-icons/vsc";
 import { motion } from "motion/react";
 
 const Skills = () => {

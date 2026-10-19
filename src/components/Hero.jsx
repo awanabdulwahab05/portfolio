@@ -100,7 +100,7 @@ function Magnet({
 function ContactButton() {
   return (
     <motion.a
-      href="mailto:hello@example.com"
+      href="#contact"
       {...fadeIn(0.5, 20)}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.96 }}
@@ -209,8 +209,7 @@ export default function Hero() {
             font-light uppercase leading-snug tracking-wide
             sm:max-w-[220px] md:max-w-[260px]"
         >
-          A 3D creator driven by crafting striking and
-          unforgettable projects.
+          I build responsive, user-friendly websites backed by robust and scalable backend systems.
         </motion.p>
 
         <ContactButton />

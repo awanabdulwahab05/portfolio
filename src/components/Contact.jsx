@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import {
     FaEnvelope,
     FaPaperPlane,
-    FaCommentDots,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";

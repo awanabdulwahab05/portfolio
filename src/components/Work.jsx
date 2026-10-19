@@ -1,7 +1,9 @@
+
 import { motion } from "motion/react";
 import {
     IoLogoReact,
     IoLayers,
+    IoLogoNodejs,
 } from "react-icons/io5";
 import {
     BiLogoTailwindCss,
@@ -12,12 +14,10 @@ import {
     FaGithub,
     FaExternalLinkAlt,
 } from "react-icons/fa";
-import { IoLogoNodejs } from "react-icons/io5";
-import { GrJs } from "react-icons/gr"
-import { RiGeminiFill } from "react-icons/ri"
+import { GrJs } from "react-icons/gr";
+import { RiGeminiFill } from "react-icons/ri";
 
 const projects = [
-
     {
         title: "SkillMatch AI",
         description:
@@ -53,21 +53,21 @@ const projects = [
 const Work = () => {
     return (
         <section
-            id="works"
-            className="bg-[#5ab4bf] px-6 py-20 text-[#F3FAF8] md:px-12 lg:px-24"
+            id="projects"
+            className="bg-[#0C0C0C] px-6 py-20 text-[#D7E2EA] md:px-12 lg:px-24"
         >
             <div className="mx-auto max-w-6xl">
                 {/* Section Heading */}
                 <div className="mb-14">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#267089]">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#9BA9B5]">
                         Things I've Built
                     </p>
 
                     <h2 className="text-4xl font-bold md:text-5xl">
-                        My <span className="text-[#166b72]">Works.</span>
+                        My <span className="text-white">Works.</span>
                     </h2>
 
-                    <p className="mt-4 max-w-2xl leading-7 text-desc">
+                    <p className="mt-4 max-w-2xl leading-7 text-[#B8C3CC]">
                         Here are some projects I've built to practice my
                         skills and solve real-world problems.
                     </p>
@@ -84,10 +84,10 @@ const Work = () => {
                     {projects.map((project) => (
                         <article
                             key={project.title}
-                            className="group flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg shadow-black/5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-violet-400/70 hover:shadow-xl"
+                            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-xl"
                         >
                             {/* Project Image */}
-                            <div className="relative h-48 shrink-0 overflow-hidden bg-[#064B4A]/80">
+                            <div className="relative h-48 shrink-0 overflow-hidden bg-[#1C1C1C]">
                                 <img
                                     src={project.image}
                                     alt={`${project.title} project preview`}
@@ -95,7 +95,7 @@ const Work = () => {
                                     loading="lazy"
                                 />
 
-                                <div className="absolute inset-0 bg-linear-to-t from-[#064B4A]/50 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/60 to-transparent" />
                             </div>
 
                             {/* Project Details */}
@@ -104,7 +104,7 @@ const Work = () => {
                                     {project.title}
                                 </h3>
 
-                                <p className="mb-5 text-sm leading-7 text-desc">
+                                <p className="mb-5 text-sm leading-7 text-[#B8C3CC]">
                                     {project.description}
                                 </p>
 
@@ -116,9 +116,12 @@ const Work = () => {
                                         return (
                                             <span
                                                 key={technology.name}
-                                                className="inline-flex items-center gap-2 rounded-lg border border-[#21899F]/60 bg-[#064B4A]/80 px-3 py-2 text-xs text-[#D5F5F0] transition duration-300 hover:border-violet-400 hover:bg-[#126B7A]"
+                                                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#1C1C1C] px-3 py-2 text-xs text-[#D7E2EA] transition duration-300 hover:border-white/30 hover:bg-[#292E33]"
                                             >
-                                                <TechnologyIcon size={16} />
+                                                <TechnologyIcon
+                                                    size={16}
+                                                    className="text-[#9BA9B5]"
+                                                />
                                                 <span>{technology.name}</span>
                                             </span>
                                         );
@@ -126,13 +129,13 @@ const Work = () => {
                                 </div>
 
                                 {/* Project Links */}
-                                <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-white/20 pt-5">
+                                <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-white/10 pt-5">
                                     <a
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`View ${project.title} source code on GitHub`}
-                                        className="inline-flex items-center gap-2 rounded-lg border border-[#064B4A]/40 bg-[#064B4A]/80 px-4 py-2 font-semibold text-[#D5F5F0] transition hover:border-violet-400 hover:bg-[#126B7A]"
+                                        className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-[#1C1C1C] px-4 py-2 font-semibold text-[#D7E2EA] transition hover:border-white/30 hover:bg-[#292E33]"
                                     >
                                         <FaGithub size={20} />
                                         <span>GitHub</span>
@@ -144,7 +147,7 @@ const Work = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={`View ${project.title} live demo`}
-                                            className="inline-flex items-center gap-2 rounded-lg bg-[#064B4A] px-4 py-2 font-semibold text-[#8DE5DE] transition hover:bg-[#126B7A]"
+                                            className="inline-flex items-center gap-2 rounded-lg bg-[#D7E2EA] px-4 py-2 font-semibold text-[#0C0C0C] transition hover:bg-white"
                                         >
                                             <FaExternalLinkAlt size={14} />
                                             <span>Live Demo</span>

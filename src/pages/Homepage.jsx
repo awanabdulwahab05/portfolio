@@ -1,17 +1,14 @@
-import React from 'react'
-import HeroSection from '../components/HeroSection'
 import About from '../components/About'
-import Navbar from '../components/Navbar'
 import Skills from '../components/Skills'
 import Services from '../components/Services'
 import Contact from '../components/Contact'
 import Work from '../components/Work'
+import Hero from '../components/Hero'
 
 const Homepage = () => {
     return (
         <div>
-            <Navbar />
-            <HeroSection />
+            <Hero />
             <About />
             <Skills />
             <Work />

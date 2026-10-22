@@ -138,8 +138,8 @@ const Contact = () => {
                                 </div>
                             </a>
 
-                            {/* <a
-                                href="https://www.linkedin.com/in/your-name/"
+                            <a
+                                href="https://www.linkedin.com/in/abdul-wahab-abb7b7377"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-4 rounded-xl transition hover:bg-white/[0.05]"
@@ -151,7 +151,7 @@ const Contact = () => {
                                 <div>
                                     <p className="font-medium">Linkedin</p>
                                 </div>
-                            </a> */}
+                            </a>
                         </div>
 
                         <div className="my-8 h-px bg-white/10" />

@@ -8,17 +8,20 @@ import {
     IoLogoNodejs
 } from "react-icons/io5";
 import { GrJs } from "react-icons/gr";
-import { BiLogoTailwindCss, BiLogoMongodb } from "react-icons/bi";
+import { RiNextjsLine } from "react-icons/ri";
+import { BsTypescript } from "react-icons/bs";
+import { BiLogoTailwindCss } from "react-icons/bi";
 import { motion } from "motion/react";
 
 const About = () => {
     const skills = [
+        { name: "Next.JS", icon: RiNextjsLine },
         { name: "React", icon: IoLogoReact },
         { name: "JavaScript", icon: IoLogoJavascript },
+        { name: "TypeScript", icon: BsTypescript },
         { name: "Tailwind CSS", icon: BiLogoTailwindCss },
         { name: "Node.js", icon: IoLogoNodejs },
         { name: "Express.js", icon: GrJs },
-        { name: "MongoDB", icon: BiLogoMongodb },
     ];
 
     return (

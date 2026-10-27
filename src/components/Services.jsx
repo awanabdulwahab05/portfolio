@@ -14,7 +14,7 @@ const Services = () => {
             description:
                 "I build modern, responsive, and interactive user interfaces that provide a smooth experience across devices.",
             features: [
-                "React.js Development",
+                "Next Js Development",
                 "Responsive UI Design",
                 "Tailwind CSS Styling",
             ],
@@ -26,7 +26,7 @@ const Services = () => {
             description:
                 "I develop complete web applications by connecting intuitive frontend interfaces with reliable backend systems.",
             features: [
-                "React Frontend",
+                "Next Js",
                 "Node.js & Express.js",
                 "REST API Integration",
             ],
@@ -39,7 +39,7 @@ const Services = () => {
                 "I create server-side functionality and APIs to handle application data, authentication, and business logic.",
             features: [
                 "RESTful APIs",
-                "MongoDB Integration",
+                "Database Integration",
                 "Authentication Systems",
             ],
         },

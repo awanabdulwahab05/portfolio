@@ -6,15 +6,13 @@ import {
     IoLogoJavascript,
     IoLogoNodejs,
     IoGlobeOutline,
-    IoLayers
 } from "react-icons/io5";
 import { BiLogoTailwindCss, BiLogoMongodb } from "react-icons/bi";
 import { CiMobile3 } from "react-icons/ci";
 import { LuMonitor } from "react-icons/lu";
-import {
-    FaCheckCircle,
-    FaGithub
-} from "react-icons/fa";
+import { FaCheckCircle, FaGithub } from "react-icons/fa";
+import { BsTypescript } from "react-icons/bs";
+import { RiNextjsLine } from "react-icons/ri";
 import { FaServer } from "react-icons/fa6";
 import { GrJs } from "react-icons/gr";
 import { motion } from "motion/react";
@@ -29,6 +27,7 @@ const Skills = () => {
                 { name: "HTML5", icon: IoLogoHtml5 },
                 { name: "CSS3", icon: IoLogoCss3 },
                 { name: "JavaScript", icon: IoLogoJavascript },
+                { name: "Next Js", icon: RiNextjsLine },
                 { name: "React", icon: IoLogoReact },
                 { name: "Tailwind CSS", icon: BiLogoTailwindCss },
                 { name: "Responsive Design", icon: CiMobile3 },
@@ -41,6 +40,7 @@ const Skills = () => {
             skills: [
                 { name: "Node.js", icon: IoLogoNodejs },
                 { name: "Express.js", icon: GrJs },
+                { name: "TypeScript", icon: BsTypescript },
                 { name: "REST APIs", icon: IoGlobeOutline },
                 { name: "MongoDB", icon: BiLogoMongodb },
                 { name: "Authentication", icon: FaCheckCircle },
